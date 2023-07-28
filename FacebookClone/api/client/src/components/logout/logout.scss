@@ -1,0 +1,82 @@
+@import "../../style.scss";
+
+.logout {
+  @include themify($themes) {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+
+  .wrapper {
+    margin: auto;
+    width: 20%;
+    height: 40%;
+    background-color: themed("bg");
+    border-radius: 20px;
+    z-index: 999;
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    -webkit-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+    -moz-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+    box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+    position: relative;
+    @include mobile {
+      width: 60%;
+      height: 40%;
+    }
+
+    span{
+      position: relative;
+      top: 0;
+      left: 0;
+      font-weight: bold;
+      font-size: 25px;
+      width: 100%;
+      display: flex;
+      text-align: center;
+      justify-content: space-between;
+      padding-bottom: 20px;
+    }
+
+    .options{
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      
+      button{
+        width: 70px;
+        height: 45px;
+        border-radius: 10px;
+        background-color: rgb(238, 103, 85);
+        border: 3px solid themed("border");
+        font-weight: 600;
+        color: themed("textColor");
+        font-size: 15px;
+      }
+
+      button:nth-child(even){
+        background-color: rgb(117, 117, 240);
+      }
+    }
+  
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      border: none;
+      background-color: #f0544f;
+      border-radius: 10px;
+      padding: 5px;
+      cursor: pointer;
+      color: white;
+    }
+  }
+  }
+}
